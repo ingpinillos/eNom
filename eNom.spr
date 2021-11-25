@@ -1,0 +1,8 @@
+wcmd = "\\PCGCSrv01\eNom\Obj\eNom.exe"
+IF FILE(wcmd)
+	wcmd = wcmd+" "+gEmpresa+" "+gBDEmp
+	oShell = createobject("WScript.Shell")
+	oShell.Run(wcmd,1,.F.)
+ELSE
+	WAIT WINDOW 'Recuerde actualizar el programa eNom.spr'+CHR(13)+wcmd+' ->¡No existe!<- '
+ENDIF
